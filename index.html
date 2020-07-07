@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Creative Code Day 2</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ------------- -->
+      <section class="title-slide">
+        <h3 class="title-text">Creative Code</h3>
+        <div class="sub-head">
+          <div class="sub-head-text"><span>07.07.20 - day 2</span></div>
+        </div>
+        <div class="child-slide-body">
+          <div id="anim-circles-container">
+            <div id="circle-1" class="anim-circle"></div>
+            <div id="circle-2" class="anim-circle"></div>
+            <div id="circle-3" class="anim-circle"></div>
+            <div id="circle-4" class="anim-circle"></div>
+            <div id="circle-5" class="anim-circle"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------------- -->
+      <section class="child-slide">
+        <h5>Course Overview</h5>
+
+        <div class="child-slide-body">
+          <ul class="child-slide-body-list">
+            <li>
+              <div class="list-item-container">
+                <b>Day 1</b>: Intro to p5.js ~ shapes, colors, and the mouse
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ❅<b>Day 2</b>: Animating ~ using time, transformations, conditionals, and objects
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                <b>Day 3</b>: Copy-Paste ~ arrays and loops
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                <b>Day 4</b>: rAnDomNEsS and noise
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                <b>Day 5</b>: Project Day!
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ------------- -->
+      <section class="child-slide">
+        <h5>What are we doing today?</h5>
+        <div class="sub-head">
+          <div class="sub-head-text">
+            <span>what are we even doing here?</span>
+          </div>
+        </div>
+        <div class="child-slide-body">
+          <ul class="child-slide-body-list">
+            <li>
+              <div class="list-item-container">
+                ~<span>1.5hr –> basic animations and conditionals</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>30min –> break!</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>1hr –> animation practice</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>1hr –> Lunch break!</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>1hr –> Transformations</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>1hr –> Longer project</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ------------- -->
+      <section class="child-slide">
+        <h5>Quick Recap</h5>
+        <div class="sub-head">
+          <div class="sub-head-text">
+            <span>what did we do yesterday?</span>
+          </div>
+        </div>
+        <div class="child-slide-body">
+          <ul class="child-slide-body-list">
+            <li>
+              <div class="list-item-container">
+                ~<span>basic shapes: line, triangle, rect, ellipse</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>colors: fill and stroke with RGB</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>functions and variables (let)</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>mouse interaction</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ------------- -->
+      <section class="child-slide">
+        <h5>Using Time</h5>
+        <div class="sub-head">
+          <div class="sub-head-text">
+            <span>the only constant is change</span>
+          </div>
+        </div>
+        <div class="child-slide-body">
+          <ul class="child-slide-body-list">
+            <li>
+              <div class="list-item-container">
+                ~<span>The <code>draw()</code> loop runs continuously, let's use it</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>incrementing: x = x + 1</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>can also be written as x += 1 or x++</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>we can use this to represent velocity</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ------------- -->
+      <section class="child-slide">
+        <h5>Conditionals</h5>
+        <div class="sub-head">
+          <div class="sub-head-text">
+            <span>ifs</span>
+          </div>
+        </div>
+        <div class="child-slide-body">
+          <ul class="child-slide-body-list">
+            <li>
+              <div class="list-item-container">
+                ~<span><code>if</code> this, then that</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>if-else</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>booleans! true or false</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ------------- -->
+      <section class="child-slide">
+        <h5>Booleans and Comparisons</h5>
+        <div class="sub-head">
+          <div class="sub-head-text">
+            <span>true or false</span>
+          </div>
+        </div>
+        <div class="child-slide-body">
+          <ul class="child-slide-body-list">
+            <li>
+              <div class="list-item-container">
+                ~<span>&lt;, &lt;= – less than (or equal)</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>&gt;, &gt;= – greater than (or equal)</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>== or != – is equal or is not equal</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>&amp&amp – and</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>|| – or</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ------------- -->
+      <section class="child-slide">
+        <h5>Exercise I – Animating</h5>
+        <div class="sub-head">
+          <div class="sub-head-text">
+            <span>let's move</span>
+          </div>
+        </div>
+        <div class="child-slide-body">
+          <ul class="child-slide-body-list">
+            <li>
+              <div class="list-item-container">
+                ~<span>make some shapes or find shapes you've already made</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="list-item-container">
+                ~<span>have them bounce around the screen like those old screensavers</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span><a href="http://www.floatbounce.com/" target="_blank">floatbounce – Rafael Rozendaal</a></span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>bounce as many shapes as you want!</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>create chaos</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ------------- -->
+      <section class="child-slide">
+        <h5>Transformations ✨</h5>
+        <div class="sub-head">
+          <div class="sub-head-text">
+            <span>oooooh</span>
+          </div>
+        </div>
+        <div class="child-slide-body">
+          <ul class="child-slide-body-list">
+            <li>
+              <div class="list-item-container">
+                ~<span>transformations occur on the <b>canvas</b>, not the objects</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>this means they build on each other, and the order matters!</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>rotate() – uses radians, not degrees (2*PI radians in a circle)</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>translate()</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>push() and pop() – think "save" and "restore"</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ------------- -->
+      <section class="child-slide">
+        <h5>Transformations ✨</h5>
+        <div class="sub-head">
+          <div class="sub-head-text">
+            <span>oooooh</span>
+          </div>
+        </div>
+        <div class="child-slide-body">
+          <ul class="child-slide-body-list">
+            <li>
+              <div class="list-item-container">
+                ~<span>There are a lot of rules when it comes to transformations</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>don't worry about memorizing all of them</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>EXPERIMENT!</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>push() and pop() help keep things organized</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ------------- -->
+      <section class="child-slide">
+        <h5>Exercise I – Transformations ✨</h5>
+        <div class="sub-head">
+          <div class="sub-head-text">
+            <span>oooooh</span>
+          </div>
+        </div>
+        <div class="child-slide-body">
+          <ul class="child-slide-body-list">
+            <li>
+              <div class="list-item-container">
+                ~<span>make some shapes using transformations!</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ------------- -->
+      <section class="child-slide">
+        <h5>Exercise III – Animating Transforms</h5>
+        <div class="sub-head">
+          <div class="sub-head-text">
+            <span>the only constant is change</span>
+          </div>
+        </div>
+        <div class="child-slide-body">
+          <ul class="child-slide-body-list">
+            <li>
+              <div class="list-item-container">
+                ~<span>make a solar system</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>a sun and a few planets orbiting around it</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>for an extra challenge, make some moons or stars!</span>
+              </div>
+            </li>
+            <li>
+              <div class="list-item-container">
+                ~<span>create chaos</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</body>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script>
+  // ---------------------------------------------
+  init();
+
+  // ---------------------------------------------
+  let content = [
+  {
+    slideType: "title",
+    slideTitle: "Week 1: Web Skills",
+    subHeadText: "Intro to HTML & CSS"
+  },
+  {
+    slideType: "child",
+    slideTitle: "Agenda",
+    subHeadText: "what we're doing today:",
+    childBody: {
+
+    }
+  }
+  ];
+
+  // ---------------------------------------------
+  function init() {
+    Reveal.initialize({
+      dependencies: [
+      {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        callback: function() { hljs.initHighlightingOnLoad(); }
+      }
+      ]
+    });
+
+    Reveal.configure({
+      slideNumber: true,
+      slideNumber: 'c/t'
+    });
+
+    generateSlides();
+  }
+
+  // ---------------------------------------------
+  function generateSlides() {
+    // map content to markup
+  }
+
+</script>
+
+</html>
